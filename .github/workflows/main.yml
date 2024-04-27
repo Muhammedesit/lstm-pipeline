@@ -21,9 +21,9 @@ jobs:
 
     - name: Copy Files
       run: |
-        cp run.py /run.py
-        cp Dockerfile /Dockerfile
-        cp bat_with_temp.csv /bat_with_temp.csv
+        cp run.py run.py
+        cp Dockerfile Dockerfile
+        cp bat_with_temp.csv bat_with_temp.csv
 
     - name: Build Docker Image
       run: docker build -t lstm-model /my_lstm_project
