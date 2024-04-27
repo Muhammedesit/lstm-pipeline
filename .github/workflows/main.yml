@@ -19,11 +19,11 @@ jobs:
       with:
         python-version: '3.8'
 
-    - name: Move Files
+    - name: Copy Files
       run: |
-        mv run.py $GITHUB_WORKSPACE/run.py
-        mv Dockerfile $GITHUB_WORKSPACE/Dockerfile
-        mv bat_with_temp.csv $GITHUB_WORKSPACE/bat_with_temp.csv
+        cp run.py $GITHUB_WORKSPACE/run.py
+        cp Dockerfile $GITHUB_WORKSPACE/Dockerfile
+        cp bat_with_temp.csv $GITHUB_WORKSPACE/bat_with_temp.csv
 
     - name: Build Docker Image
       run: docker build -t lstm-model $GITHUB_WORKSPACE
