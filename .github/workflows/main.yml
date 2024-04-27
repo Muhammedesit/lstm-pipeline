@@ -21,9 +21,9 @@ jobs:
 
     - name: Move Files
       run: |
-        mv run.py /github/workspace/run.py
-        mv Dockerfile /github/workspace/Dockerfile
-        mv bat_with_temp.csv /github/workspace/bat_with_temp.csv
+        mv run.py /.github/workspace/run.py
+        mv Dockerfile /.github/workspace/Dockerfile
+        mv bat_with_temp.csv /.github/workspace/bat_with_temp.csv
 
     - name: Build Docker Image
       run: docker build -t lstm-model /github/workspace
