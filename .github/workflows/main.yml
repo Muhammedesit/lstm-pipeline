@@ -21,12 +21,12 @@ jobs:
 
     - name: Copy Files
       run: |
-        cp run.py run.py
-        cp Dockerfile Dockerfile
-        cp bat_with_temp.csv bat_with_temp.csv
+        cp run.py $GITHUB_WORKSPACE/run.py
+        cp Dockerfile $GITHUB_WORKSPACE/Dockerfile
+        cp bat_with_temp.csv $GITHUB_WORKSPACE/bat_with_temp.csv
 
     - name: Build Docker Image
-      run: docker build -t lstm-model /my_lstm_project
+      run: docker build -t lstm-model $GITHUB_WORKSPACE
 
     - name: Run Docker Container
       run: docker run lstm-model
