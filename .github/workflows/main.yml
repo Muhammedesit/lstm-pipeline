@@ -19,6 +19,9 @@ jobs:
       with:
         python-version: '3.8'
 
+    - name: Create Project Directory
+      run: mkdir /my_lstm_project
+
     - name: Copy Files
       run: |
         cp run.py /my_lstm_project/run.py
