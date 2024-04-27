@@ -20,16 +20,16 @@ jobs:
         python-version: '3.8'
 
     - name: Create Project Directory
-      run: mkdir /my_lstm_project
+      run: mkdir /github/workspace/my_lstm_project
 
     - name: Copy Files
       run: |
-        cp run.py /my_lstm_project/run.py
-        cp Dockerfile /my_lstm_project/Dockerfile
-        cp bat_with_temp.csv /my_lstm_project/bat_with_temp.csv
+        cp run.py /github/workspace/my_lstm_project/run.py
+        cp Dockerfile /github/workspace/my_lstm_project/Dockerfile
+        cp bat_with_temp.csv /github/workspace/my_lstm_project/bat_with_temp.csv
 
     - name: Build Docker Image
-      run: docker build -t lstm-model /my_lstm_project
+      run: docker build -t lstm-model /github/workspace/my_lstm_project
 
     - name: Run Docker Container
       run: docker run lstm-model
